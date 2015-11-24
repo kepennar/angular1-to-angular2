@@ -1,0 +1,38 @@
+<zn-navbar></zn-navbar>
+<div class="container main-content article-details">
+  <div class="row">
+    <div class="text-center">
+      <article>
+        <h1>{{details.article.name}}</h1>
+        <span class="date">{{details.article.createdAt | date}}</span>
+        <p>
+          {{details.article.text}}
+        </p>
+      </article>
+
+      <div class="rating">
+        Rating :
+        <span class="stars">
+          <uib-rating ng-model="details.article.userRate" 
+            max="5" ng-click="details.rateArticle(details.article.id, details.article.userRate)">
+            </uib-rating>
+        </span>
+      </div>
+      <div class="comments">
+        <button ng-hide="details.comments" ng-click="details.displayComent()" class="btn btn-primary btn-lg">Display comments</button>
+        <div ng-show="details.comments">
+
+          <div class="new-comment clearfix">
+            <form ng-submit="details.comment(details.article.id, details.newComment)">
+              <textarea ng-model="details.newComment" placeholder="New comment..."></textarea>
+              <button type="submit" class="btn btn-success pull-right">Comment</button>
+            </form>
+          </div>
+          <span class="no-comment" ng-if="!details.comments.length">No comments</span>
+          <div class="comment panel panel-default" ng-repeat="comment in details.comments | orderBy: comment.createdAt: true track by comment.id ">
+            {{comment.text}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

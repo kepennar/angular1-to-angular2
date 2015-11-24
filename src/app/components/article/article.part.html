@@ -1,0 +1,7 @@
+<article>
+	<span class="date">{{article.data.createdAt | date}}</span>
+	<h2 ng-click="article.onSelect({article: article.data})">{{article.data.name}}</h2>
+	<section>
+		{{article.preview}}
+	</section>
+</article>

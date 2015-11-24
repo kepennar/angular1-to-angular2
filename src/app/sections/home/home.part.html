@@ -1,0 +1,9 @@
+<zn-navbar>
+</zn-navbar>
+<div class="main-content container">
+  <div class="row" ng-repeat="article in home.articles track by article.id">
+    <zn-article 
+      data="article" 
+      on-select="home.goToDetails(article)"></zn-article>
+  </div>
+</div>

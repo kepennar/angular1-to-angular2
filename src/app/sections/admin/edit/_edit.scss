@@ -1,0 +1,16 @@
+.article-edit {
+	fieldset {
+		padding: 10px;
+    margin: 10px;
+    border: solid 1px $zen-color;
+		
+		legend {
+			border-bottom-color: $zen-color;
+		}
+		textarea {
+			width: 100%;
+			height: 300px;
+		}
+	}
+		
+}

@@ -1,0 +1,24 @@
+<div class="container article-edit">
+  <button class="btn btn-primary" ui-sref="home">Go back to the blog</button>
+  <h1>Administration</h1>
+  <fieldset>
+    <legend>
+      <span ng-hide="admin.editTitle" ng-dblclick="admin.editTitle = true" placeholder="Title">{{admin.article.name}}</span>
+      <form ng-submit="admin.editTitle = false">
+        <input type="text" ng-show="admin.editTitle" ng-model="admin.article.name" ng-blur="admin.editTitle = false" />
+      </form>
+    </legend>
+    <p ng-hide="admin.editText" ng-dblclick="admin.editText = true">
+      {{admin.article.text}}
+    </p>
+    <form ng-submit="admin.editText = false">
+      <textarea ng-show="admin.editText" ng-model="admin.article.text" ng-blur="admin.editText = false" placeholder="Some text"></textarea>
+    </form>
+</div>
+<div class="pull-right">
+  <button class="btn btn-default" ui-sref="admin">Cancel</button>
+  <button class="btn btn-danger" ng-if="admin.article.id" ng-click="admin.delete(admin.article)">Delete</button>
+  <button class="btn btn-success" ng-click="admin.save(admin.article)">save</button>
+
+</div>
+</div>

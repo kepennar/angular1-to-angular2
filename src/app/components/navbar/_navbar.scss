@@ -1,0 +1,21 @@
+zn-navbar {
+  display: block;
+  background-color: $navbar-default-bg;
+  height: 200px;
+  box-shadow: 0 10px 20px -6px #999;
+  
+  nav {
+    border-color: none;
+    background: url('../assets/images/zenika.png') no-repeat center;
+    background-size: contain;
+    .zn-navbar-text{
+      color: white;
+    }
+    .navbar-brand {
+      padding: 20px 15px;
+    }
+    .navbar-right {
+      margin: 0;
+    }
+  }
+}

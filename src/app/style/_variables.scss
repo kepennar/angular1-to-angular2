@@ -1,0 +1,18 @@
+$zen-color: #A21013;
+
+$navbar-height: 100px;
+$navbar-default-color: #efefef;
+$navbar-default-bg: $zen-color;
+$navbar-default-border: none;
+
+$navbar-default-brand-color: $navbar-default-color;
+
+$navbar-default-link-color: $navbar-default-color;
+$navbar-default-link-active-color : darken($navbar-default-link-color, 20%);
+$navbar-default-link-active-bg : $navbar-default-bg;
+$navbar-default-toggle-hover-bg: darken($navbar-default-bg, 20%);
+$navbar-default-toggle-icon-bar-bg: $navbar-default-color;
+//$navbar-default-toggle-border-color: 
+
+
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";

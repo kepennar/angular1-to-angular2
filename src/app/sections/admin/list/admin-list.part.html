@@ -1,0 +1,11 @@
+<div class="container article-list">
+  <button class="btn btn-primary" ui-sref="home">Go back to the blog</button>
+  <h1>Administration</h1>
+  <div class="list-group">
+    <a ui-sref="adminEdit({postId: article.id})" class="list-group-item" ng-repeat="article in admin.articles track by article.id">
+      <span class="article-name">{{article.name}}</span>
+      <span class="pull-right article-date">{{article.createdAt | date}}</span>
+    </a>
+  </div>
+  <button class="btn btn-primary" ui-sref="adminEdit">New</button>
+</div>

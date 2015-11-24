@@ -1,0 +1,24 @@
+
+@import "style/variables";
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+body {
+	background: url('../assets/images/ZNK.jpg') no-repeat center;
+	background-size: cover;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	.main-content {
+		background-color: rgba(255, 255, 255, 0.51);
+		padding: 0 30px;
+	}
+}
+@import "./components/navbar/navbar.scss";
+@import "./components/article/article.scss";
+
+@import "./sections/article-details/article-details.scss";
+@import "./sections/admin/list/list.scss";
+@import "./sections/admin/edit/edit.scss";
