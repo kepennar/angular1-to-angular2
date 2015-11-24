@@ -8,7 +8,6 @@
       'ngSanitize',
       'ngResource',
       'ui.router',
-      // 'ui.bootstrap',
       'front.home',
       'front.article-details',
       'front.admin',
