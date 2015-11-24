@@ -15,6 +15,7 @@
         controller: RatingController,
         controllerAs: 'rating',
         bindToController: {
+          currentRate: '=',
           max: '@',
           onRate: '&'
         }

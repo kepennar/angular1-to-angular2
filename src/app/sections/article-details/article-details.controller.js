@@ -22,8 +22,8 @@
       vm.comments = Post.getComments({postId: $stateParams.postId});
     }
     
-    vm.comment = function(postId, newComment) {
-      Post.comment({id: postId, text: newComment}).$promise
+    vm.comment = function( newComment) {
+      Post.comment({id: vm.article.id, text: newComment}).$promise
       .then(function() {
         vm.comments = Post.getComments({postId: $stateParams.postId});
       });
