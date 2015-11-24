@@ -17,7 +17,7 @@
     activate();
 
     function activate() {
-      const postId = $stateParams.postId;
+      var postId = $stateParams.postId;
       if (postId) {
         vm.article = Post.get({postId: postId} );
         vm.edit
@@ -28,8 +28,8 @@
       }
     }
     vm.save = function(article) {
-      const postId = article.id;
-      let promise;
+      var postId = article.id;
+      var promise;
       if (postId) {
         promise = article.$update();
       } else {
