@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -7,8 +7,11 @@
 
   /** @ngInject */
   function runBlock($log) {
-
-    $log.debug('runBlock end');
+    $log.debug('App started');
   }
 
+
+  angular.element(document).ready(function () {
+    angular.bootstrap(document, ['front']);
+  });
 })();
