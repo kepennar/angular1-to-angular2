@@ -9,6 +9,7 @@
           {{details.article.text}}
         </p>
       </article>
+<<<<<<< HEAD
 
       <div class="rating">
         Rating :
@@ -34,5 +35,11 @@
           </div>
         </div>
       </div>
+=======
+      
+      <zn-rating current-rate="details.article.userRate" on-rate="details.rateArticle(userRate)" max="5"></zn-rating>
+      <zn-comment data="details.comments" on-activate="details.displayComent()" on-send="details.comment(newComment)"></zn-comment>
+>>>>>>> a55ca7e... make directive working
     </div>
   </div>
+</div>

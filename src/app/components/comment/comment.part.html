@@ -1,0 +1,17 @@
+<button ng-hide="comment.data" ng-click="comment.onActivate()" class="btn btn-primary btn-lg">
+	Display comments
+</button>
+<div ng-show="comment.data">
+
+	<div class="new-comment clearfix">
+		<form ng-submit="comment.onSend({newComment: comment.newComment})">
+			<textarea ng-model="comment.newComment" placeholder="New comment..."></textarea>
+			<button type="submit" class="btn btn-success pull-right">Comment</button>
+		</form>
+	</div>
+	<span class="no-comment" ng-if="!comment.data.length">No comments</span>
+	<div class="comment panel panel-default" 
+		ng-repeat="comment in comment.data | orderBy: comment.createdAt: true track by comment.id ">
+		{{comment.text}}
+	</div>
+</div>
