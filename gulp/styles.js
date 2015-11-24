@@ -12,7 +12,9 @@ var _ = require('lodash');
 
 gulp.task('styles', function () {
   var sassOptions = {
-    style: 'expanded'
+    style: 'expanded',
+    includePaths: ['node_modules/bootstrap-sass/assets/stylesheets']
+
   };
 
   var injectFiles = gulp.src([
