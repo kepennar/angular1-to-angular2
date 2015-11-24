@@ -1,14 +1,14 @@
 (function () {
   'use strict';
 
-  angular
-    .module('front')
-    .run(runBlock);
+  // angular
+  //   .module('front')
+  //   .run(runBlock);
 
-  /** @ngInject */
-  function runBlock($log) {
-    $log.debug('App started');
-  }
+  // /** @ngInject */
+  // function runBlock($log) {
+  //   $log.debug('App started');
+  // }
 
 
   angular.element(document).ready(function () {

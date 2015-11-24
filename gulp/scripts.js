@@ -7,19 +7,30 @@ var conf = require('./conf');
 var browserSync = require('browser-sync');
 
 var $ = require('gulp-load-plugins')();
+var wp = require('webpack');
 
 function webpack(watch, callback) {
+
   var webpackOptions = {
     watch: watch,
     module: {
-      loaders: [{ test: /\.ts$/, exclude: /node_modules/, loader: 'ts', query: {
+      loaders: [
+        { test: /\.ts$/, exclude: /node_modules/, loader: 'ts'},
+        { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: {
         optional: ['runtime'],
         stage: 1
       }}]
     },
+    plugins: [
+      new wp.optimize.OccurenceOrderPlugin(true),
+      new wp.optimize.DedupePlugin(),
+      new wp.optimize.CommonsChunkPlugin({
+        name: 'common',
+        filename: 'common.js'
+      })
+    ],
     output: { filename: 'index.js' }
   };
-
   if(watch) {
     webpackOptions.devtool = 'inline-source-map';
   }
@@ -41,7 +52,11 @@ function webpack(watch, callback) {
     }
   };
 
-  return gulp.src(path.join(conf.paths.src, '/app/**/*.js'))
+  return gulp.src([
+    path.join(conf.paths.src, '/app/**/*.js'),
+    path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
+  ])
+    .pipe($.angularFilesort())
     .pipe($.webpack(webpackOptions, null, webpackChangeHandler))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
 }
