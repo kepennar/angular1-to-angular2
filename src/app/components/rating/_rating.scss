@@ -1,0 +1,15 @@
+zn-rating {
+	font-weight: bold;
+	.stars {
+		color: $zen-color;
+		font-size: 24px;
+		
+		&:hover {
+			color: #E0CB17;
+			cursor: pointer;
+		}
+		> span {
+			outline: none;
+		}	
+	}
+}

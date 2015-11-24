@@ -14,8 +14,8 @@
     function activate() {
       vm.article = Post.get({postId: $stateParams.postId});
     }
-    vm.rateArticle = function(postId, userRate) {
-      Post.rate({id: postId, rate: userRate});
+    vm.rateArticle = function(userRate) {
+      Post.rate({id: vm.article.id, rate: userRate});
     };
     
     vm.displayComent = function() {
@@ -26,7 +26,7 @@
       Post.comment({id: postId, text: newComment}).$promise
       .then(function() {
         vm.comments = Post.getComments({postId: $stateParams.postId});
-      })
-    }
+      });
+    };
   }
 })();

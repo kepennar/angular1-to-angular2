@@ -10,14 +10,7 @@
         </p>
       </article>
 
-      <div class="rating">
-        Rating :
-        <span class="stars">
-          <uib-rating ng-model="details.article.userRate" 
-            max="5" ng-click="details.rateArticle(details.article.id, details.article.userRate)">
-            </uib-rating>
-        </span>
-      </div>
+      <zn-rating on-rate="details.rateArticle(userRate)" max="5"></zn-rating>
       <div class="comments">
         <button ng-hide="details.comments" ng-click="details.displayComent()" class="btn btn-primary btn-lg">Display comments</button>
         <div ng-show="details.comments">
