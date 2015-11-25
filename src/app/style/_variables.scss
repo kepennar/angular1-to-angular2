@@ -12,6 +12,7 @@ $navbar-default-link-active-color : darken($navbar-default-link-color, 20%);
 $navbar-default-link-active-bg : $navbar-default-bg;
 $navbar-default-toggle-hover-bg: darken($navbar-default-bg, 20%);
 $navbar-default-toggle-icon-bar-bg: $navbar-default-color;
+//$navbar-default-toggle-border-color: 
 
 
-$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/";
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
