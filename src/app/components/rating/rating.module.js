@@ -2,7 +2,8 @@
   'use strict';
 
   angular
-    .module('front.ui.commentsList', [
+    .module('front.ui.rating', [
+      'ui.bootstrap'
     ]);
 
 })();

@@ -1,0 +1,22 @@
+{
+  "version": "1.6.0",
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "outDir": "built",
+    "rootDir": ".",
+    "declaration": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
+  },
+  "filesGlob": [
+    "./app/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
