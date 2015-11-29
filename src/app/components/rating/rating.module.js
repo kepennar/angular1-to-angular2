@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.ui.rating', [
+    .module('BlogApp.ui.rating', [
       'ui.bootstrap'
     ]);
 

@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('front.ui.navbar', []);
+    .module('BlogApp.ui.navbar', []);
 
 })();

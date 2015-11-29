@@ -2,9 +2,9 @@
   'use strict';
 
   angular
-    .module('front.home', [
-			'front.core.post',
-			'front.ui.navbar',
-			'front.ui.article',
+    .module('BlogApp.home', [
+			'BlogApp.core.post',
+			'BlogApp.ui.navbar',
+			'BlogApp.ui.article',
 		]);
 })();

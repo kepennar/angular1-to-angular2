@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.6.2",
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
@@ -14,7 +14,8 @@
     "sourceMap": true
   },
   "filesGlob": [
-    "./app/**/*.ts"
+    "app/**/*.ts",
+    "typings/**/*.ts"
   ],
   "exclude": [
     "node_modules"

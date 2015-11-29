@@ -32,3 +32,4 @@ gulp.task('inject', ['scripts', 'styles'], function () {
     .pipe($.inject(injectScripts, injectOptions))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve')));
 });
+

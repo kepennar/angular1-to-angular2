@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.core.post')
+    .module('BlogApp.core.post')
     .factory('Post', function ($resource) {
       return $resource('api/posts/:postId/:action', { postId: '@id' }, {
         update: {

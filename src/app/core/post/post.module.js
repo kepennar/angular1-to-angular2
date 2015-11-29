@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('front.core.post', ['ngResource'])
+    .module('BlogApp.core.post', ['ngResource'])
 })();

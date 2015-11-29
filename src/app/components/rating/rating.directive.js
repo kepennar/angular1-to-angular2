@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.ui.rating')
+    .module('BlogApp.ui.rating')
     .component('znRating', {
       templateUrl: 'app/components/rating/rating.part.html',
       bindings: {

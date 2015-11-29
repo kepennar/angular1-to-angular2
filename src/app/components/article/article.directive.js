@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-	angular.module('front.ui.article')
+	angular.module('BlogApp.ui.article')
 	.directive('znArticle', znArticle);
 	
 	function znArticle() {

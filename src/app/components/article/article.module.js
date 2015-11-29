@@ -1,1 +1,1 @@
-angular.module('front.ui.article', []);
+angular.module('BlogApp.ui.article', []);

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front')
+    .module('BlogApp.ui.navbar')
     .directive('znNavbar', znNavbar);
 
   /** @ngInject */

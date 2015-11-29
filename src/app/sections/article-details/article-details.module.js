@@ -2,9 +2,9 @@
   'use strict';
 
   angular
-    .module('front.article-details', [
-			'front.core.post',
-			'front.ui.rating',
-			'front.ui.commentsList'
+    .module('BlogApp.article-details', [
+			'BlogApp.core.post',
+			'BlogApp.ui.rating',
+			'BlogApp.ui.commentsList'
 		]);
 })();

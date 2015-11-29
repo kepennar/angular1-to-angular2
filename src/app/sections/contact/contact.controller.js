@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.contact')
+    .module('BlogApp.contact')
     .controller('ContactController', ContactController);
 
   /** @ngInject */

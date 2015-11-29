@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.admin')
+    .module('BlogApp.admin')
     .controller('AdminEditController', AdminEditController);
 
   /** @ngInject */

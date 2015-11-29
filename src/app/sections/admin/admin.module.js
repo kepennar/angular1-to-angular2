@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.admin', [
-			'front.core.post'
+    .module('BlogApp.admin', [
+			'BlogApp.core.post'
 		]);
 })();

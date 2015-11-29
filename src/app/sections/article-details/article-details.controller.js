@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.article-details')
+    .module('BlogApp.article-details')
     .controller('ArticleDetailsController', ArticleDetailsController);
 
   /** @ngInject */

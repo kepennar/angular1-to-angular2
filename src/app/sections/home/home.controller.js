@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('front.home')
+    .module('BlogApp.home')
     .controller('HomeController', HomeController);
 
   /** @ngInject */
