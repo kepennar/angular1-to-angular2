@@ -1,4 +1,4 @@
-<button [hidden]="data" ng-click="onActivate()" class="btn btn-primary btn-lg">
+<button [hidden]="data" (click)="onActivate.next()" class="btn btn-primary btn-lg">
 	Display comments
 </button>
 <div [hidden]="!data">
@@ -9,7 +9,7 @@
 			<button type="submit" class="btn btn-success pull-right">Comment</button>
 		</form>
 	</div>
-	<span class="no-comment" [ng-if]="!data.length">No comments</span>
+	<span class="no-comment" *ng-if="!data">No comments</span>
 	<div class="comment panel panel-default" 
 		*ng-for="#comment of data"> <!--  | orderBy: comment.createdAt: true track by comment.id  -->
 		{{comment.text}}

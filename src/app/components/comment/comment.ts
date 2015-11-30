@@ -1,20 +1,22 @@
-import {Component, NgFor, NgIf} from 'angular2/angular2';
+import {Component, NgFor, NgIf, EventEmitter, Input, Output} from 'angular2/angular2';
 
 import {adapter} from '../../adapter';
 
 @Component({
   selector: 'zn-comment',
-  inputs: ['data'],
-  events: ['onActivate', 'onSend'],
   templateUrl: 'app/components/comment/comment.part.html',
   directives: [
     NgFor, NgIf
   ]
 })
 export class ZNComment {
-  private data: string;
+  
+  @Input() data: string[] = [];
+  
+  @Output() onActivate = new EventEmitter();
+  @Output() onSend = new EventEmitter();
+  
   
   constructor() {
-    console.log(this.data);
   }
 }
