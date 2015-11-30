@@ -21,7 +21,6 @@ module.exports = {
     ],
     'angular1': [
       // Angular 1 Deps
-      // to ensure these modules are grouped together in one file
       'angular/angular',
       'angular-animate/angular-animate',
       'angular-touch/angular-touch',
@@ -34,8 +33,7 @@ module.exports = {
       'angular-simple-logger/dist/angular-simple-logger'
     ],
     'index': [
-      './src/app/bootstrap'//,
-      // './src/app/**.*.js'        
+      './src/app/bootstrap'     
     ]
   },
   module: {
@@ -50,25 +48,15 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      names: 'angular2',
-      filename: 'angular2.js',
-      minChunks: Infinity
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: 'angular1',
-      filename: 'angular1.js',
-      minChunks: Infinity
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      names: 'index',
-      filename: 'index.js',
+      names: ['angular1', 'angular2'],
       minChunks: Infinity
     }),
     new webpack.optimize.CommonsChunkPlugin({
       names: 'common',
       filename: 'common.js',
       minChunks: Infinity
-    })
+    }),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   output: {
     path: root('.tmp/serve/app'),
