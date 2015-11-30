@@ -4,7 +4,7 @@
 <div [hidden]="!data">
 
 	<div class="new-comment clearfix">
-		<form (submit)="onSend({newComment: newComment})">
+		<form (submit)="submitComment(newComment)">
 			<textarea [(ng-model)]="newComment" placeholder="New comment ..."></textarea>
 			<button type="submit" class="btn btn-success pull-right">Comment</button>
 		</form>

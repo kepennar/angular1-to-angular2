@@ -1,6 +1,3 @@
-
-import 'zone.js';
-import 'reflect-metadata';
 import * as angular from 'angular';
 
 import {adapter} from './adapter';

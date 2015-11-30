@@ -15,8 +15,11 @@ export class ZNComment {
   
   @Output() onActivate = new EventEmitter();
   @Output() onSend = new EventEmitter();
-  
-  
+    
   constructor() {
+  }
+  
+  submitComment(newComment) {
+    this.onSend.next(newComment);
   }
 }

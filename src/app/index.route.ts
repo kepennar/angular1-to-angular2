@@ -1,7 +1,6 @@
 
-/** @ngInject */
-export function routeConfig($stateProvider, $urlRouterProvider) {
-  $stateProvider
+export function routeConfig($stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
+    $stateProvider
     .state('home', {
       url: '/',
       templateUrl: 'app/sections/home/home.part.html',
@@ -33,5 +32,6 @@ export function routeConfig($stateProvider, $urlRouterProvider) {
       controllerAs: 'admin'
     });
 
-  $urlRouterProvider.otherwise('/');
-}
+    $urlRouterProvider.otherwise('/');
+  }
+routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];

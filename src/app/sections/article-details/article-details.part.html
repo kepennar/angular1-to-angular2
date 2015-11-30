@@ -11,7 +11,11 @@
       </article>
 
       <zn-rating current-rate="details.article.userRate" on-rate="details.rateArticle(userRate)" max="5"></zn-rating>
-      <zn-comment [data]="details.comments" (on-activate)="details.displayComent()" (on-send)="details.comment(newComment)"></zn-comment>
+      <zn-comment 
+        [data]="details.comments" 
+        (on-activate)="details.displayComent()" 
+        (on-send)="details.comment($event)">
+      </zn-comment>
 
     </div>
   </div>
