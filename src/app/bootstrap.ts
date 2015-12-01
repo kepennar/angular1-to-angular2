@@ -5,6 +5,7 @@ import {adapter} from './adapter';
 import {routeConfig} from './index.route';
 
 import './components/comment/comment.module';
+import './components/rating/rating.module';
 
 angular.module('BlogApp', [
   'ngAnimate',

@@ -1,6 +1,12 @@
-	Rating :
+
 <span class="stars">
-  <uib-rating ng-model="znRating.currentRate" 
-    max="{{znRating.max}}" ng-click="znRating.onRate({userRate: znRating.currentRate})">
-    </uib-rating>
+	Rating:
+	<ul>
+		<li 
+			*ng-for="#star of stars"
+			 class="glyphicon" [ng-class]="{'glyphicon-star': star.selected, 'glyphicon-star-empty': !star.selected}" 
+			(mouseover)="selectRate(star.index)"
+			(click)="onRate.next(currentRate)" >
+		</li>
+	</ul>
 </span>

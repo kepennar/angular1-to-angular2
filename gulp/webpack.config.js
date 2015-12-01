@@ -13,9 +13,7 @@ module.exports = {
       '@reactivex/rxjs',
       'zone.js',
       'reflect-metadata',
-      // to ensure these modules are grouped together in one file
       'angular2/angular2',
-      'angular2/core',
       'angular2/router',
       'angular2/http'
     ],
@@ -27,7 +25,6 @@ module.exports = {
       'angular-sanitize/angular-sanitize',
       'angular-resource/angular-resource',
       'angular-ui-router/release/angular-ui-router',
-      'angular-ui-bootstrap/ui-bootstrap-tpls',
       'leaflet/dist/leaflet',
       'ui-leaflet/dist/ui-leaflet',
       'angular-simple-logger/dist/angular-simple-logger'

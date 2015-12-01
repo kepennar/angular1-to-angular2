@@ -10,8 +10,8 @@ zn-rating {
 			color: #E0CB17;
 			cursor: pointer;
 		}
-		> span {
-			outline: none;
-		}	
+		ul {
+			display: inline;	
+		}
 	}
 }

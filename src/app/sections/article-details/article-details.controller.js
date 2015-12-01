@@ -8,7 +8,6 @@
   /** @ngInject */
   function ArticleDetailsController($stateParams, Post) {
     var vm = this;
-
     activate();
 
     function activate() {
@@ -19,7 +18,7 @@
       Post.rate({id: vm.article.id, rate: userRate});
     };
     
-    vm.displayComent = function() {
+    vm.displayComment = function() {
       vm.comments = Post.getComments({postId: $stateParams.postId});
     }
     
