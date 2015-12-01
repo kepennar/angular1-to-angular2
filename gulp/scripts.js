@@ -7,30 +7,11 @@ var conf = require('./conf');
 var browserSync = require('browser-sync');
 
 var $ = require('gulp-load-plugins')();
-var wp = require('webpack');
+var webpack = require('webpack');
+var webpackConfig = require('./webpack.config.js');
 
-function webpack(watch, callback) {
+function webpackTask(watch, callback) {
 
-  var webpackOptions = {
-    watch: watch,
-    module: {
-      loaders: [
-        { test: /\.ts$/, exclude: /node_modules/, loader: 'ts'},
-        { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: {
-        optional: ['runtime'],
-        stage: 1
-      }}]
-    },
-    plugins: [
-      new wp.optimize.OccurenceOrderPlugin(true),
-      new wp.optimize.DedupePlugin(),
-      new wp.optimize.CommonsChunkPlugin({
-        name: 'common',
-        filename: 'common.js'
-      })
-    ],
-    output: { filename: 'index.js' }
-  };
   if(watch) {
     webpackOptions.devtool = 'inline-source-map';
   }
@@ -51,20 +32,13 @@ function webpack(watch, callback) {
       callback();
     }
   };
-
-  return gulp.src([
-    path.join(conf.paths.src, '/app/**/*.js'),
-    path.join('!' + conf.paths.src, '/app/**/*.spec.js'),
-  ])
-    .pipe($.angularFilesort())
-    .pipe($.webpack(webpackOptions, null, webpackChangeHandler))
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
+  webpack(webpackConfig, webpackChangeHandler);
 }
 
 gulp.task('scripts', function () {
-  return webpack(false);
+  return webpackTask(false);
 });
 
 gulp.task('scripts:watch', ['scripts'], function (callback) {
-  return webpack(true, callback);
+  return webpackTask(true, callback);
 });
