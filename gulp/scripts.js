@@ -34,18 +34,6 @@ function webpackTask(watch, callback) {
     }
   };
   webpack(webpackConfig, webpackChangeHandler);
-  // return gulp.src([
-  //   path.join(conf.paths.src, '/app/**/*.ts'),
-  //   path.join('!' + conf.paths.src, '/app/**/*.spec.ts'),
-  // ])
-  //   // .pipe($.angularFilesort())
-  //   .pipe($.order([
-  //     '**/*.module.*',
-  //     '**/*.*',
-  //     'src/app/bootstrap.ts'
-  //   ]))
-  //   .pipe($.webpack(webpackOptions, null, webpackChangeHandler))
-  //   .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
 }
 
 gulp.task('scripts', function () {
