@@ -1,4 +1,6 @@
-import {Component, NgFor, NgIf, EventEmitter, Input, Output} from 'angular2/angular2';
+import {Component} from 'angular2/angular2';
+import {NgFor, NgIf} from 'angular2/angular2';
+import {EventEmitter, Input, Output} from 'angular2/angular2';
 
 @Component({
   selector: 'zn-comment',
@@ -11,8 +13,8 @@ export class ZNComment {
   
   @Input() private data: string[] = [];
   
-  @Output() private  onActivate = new EventEmitter();
-  @Output() private  onSend = new EventEmitter();
+  @Output() private onActivate = new EventEmitter();
+  @Output() private onSend = new EventEmitter();
     
   constructor() {
   }

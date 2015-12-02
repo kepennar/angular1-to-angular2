@@ -17,5 +17,8 @@ zn-navbar {
     .navbar-right {
       margin: 0;
     }
+    .navbar-collapse {
+      background-color: $navbar-default-bg;
+    }
   }
 }

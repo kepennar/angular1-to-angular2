@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -14,11 +14,25 @@
     activate();
 
     function activate() {
-      vm.articles = Post.query();
+      Post.query().$promise
+        .then(function (articles) {
+          vm.articles = articles.map(mapArticle);
+        });
     }
-    vm.goToDetails = function(article) {
-      $state.go('articleDetails', {postId: article.id});
+    
+    vm.goToDetails = function (article) {
+      $state.go('articleDetails', { postId: article.id });
     };
 
+  }
+  function mapArticle(article) {
+    return {
+      id: article.id,
+      createdAt: new Date(article.createdAt),
+      name: article.name,
+      text: article.text,
+      userRate: article.userRate,
+      numRates: article.numRates
+    };
   }
 })();

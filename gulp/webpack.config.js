@@ -52,8 +52,8 @@ module.exports = {
       names: 'common',
       filename: 'common.js',
       minChunks: Infinity
-    }),
-    new webpack.optimize.UglifyJsPlugin()
+    })//,
+    //  new webpack.optimize.UglifyJsPlugin()
   ],
   output: {
     path: root('.tmp/serve/app'),

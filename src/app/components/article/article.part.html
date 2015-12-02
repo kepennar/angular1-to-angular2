@@ -1,7 +1,7 @@
 <article>
-	<span class="date">{{article.data.createdAt | date}}</span>
-	<h2 ng-click="article.onSelect({article: article.data})">{{article.data.name}}</h2>
+	<span class="date">{{data.createdAt | date}}</span>
+	<h2 (click)="onSelect.next(data)">{{data.name}}</h2>
 	<section>
-		{{article.preview}}
+		{{data.text | preview : 500}}
 	</section>
 </article>
