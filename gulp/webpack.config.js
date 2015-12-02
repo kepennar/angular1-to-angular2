@@ -17,18 +17,18 @@ module.exports = {
       'angular2/router',
       'angular2/http'
     ],
-    'angular1': [
-      // Angular 1 Deps
-      'angular/angular',
-      'angular-animate/angular-animate',
-      'angular-touch/angular-touch',
-      'angular-sanitize/angular-sanitize',
-      'angular-resource/angular-resource',
-      'angular-ui-router/release/angular-ui-router',
-      'leaflet/dist/leaflet',
-      'ui-leaflet/dist/ui-leaflet',
-      'angular-simple-logger/dist/angular-simple-logger'
-    ],
+    // 'angular1': [
+    //   // Angular 1 Deps
+    //   'angular/angular',
+    //   'angular-animate/angular-animate',
+    //   'angular-touch/angular-touch',
+    //   'angular-sanitize/angular-sanitize',
+    //   'angular-resource/angular-resource',
+    //   'angular-ui-router/release/angular-ui-router',
+    //   'leaflet/dist/leaflet',
+    //   'ui-leaflet/dist/ui-leaflet',
+    //   'angular-simple-logger/dist/angular-simple-logger'
+    // ],
     'index': [
       './src/app/bootstrap'     
     ]

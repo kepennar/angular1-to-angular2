@@ -27,10 +27,24 @@ export class ArticlesStore {
       .map(res => this.articleMapper(res.json()));
   }
 
+  create(article: Article) {
+    return this.http.post(`/api/posts`,
+      JSON.stringify(article),
+      { headers: JSON_HEADERS })
+    .map(res => res.json());
+  }
+  
   update(article: Article) {
     return this.http.put(`/api/posts/${article.id}`,
       JSON.stringify(article),
-      { headers: JSON_HEADERS });
+      { headers: JSON_HEADERS })
+    .map(res => res.json());
+  }
+  
+  delete(article: Article) {
+    return this.http.delete(`/api/posts/${article.id}`,
+      { headers: JSON_HEADERS })
+    .map(res => res.json());
   }
 
   rate(rate: Rate) {

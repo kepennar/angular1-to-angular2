@@ -6,6 +6,8 @@ import { RouterOutlet } from 'angular2/router';
 
 import {Home} from './sections/home/home';
 import {ArticleDetails} from './sections/article-details/article-details';
+import {AdminList} from './sections/admin/list/admin-list';
+import {AdminEdit} from './sections/admin/edit/admin-edit';
 
 @Component({
   selector: 'app',
@@ -18,7 +20,9 @@ import {ArticleDetails} from './sections/article-details/article-details';
 	`})
 @RouteConfig([
   { path: '/', as: 'Home', component: Home },
-  { path: '/article/:articleId', as: 'ArticleDetails', component: ArticleDetails }
+  { path: '/article/:articleId', as: 'ArticleDetails', component: ArticleDetails },
+  { path: '/admin', as: 'AdminList', component: AdminList },
+  { path: '/admin/:articleId', as: 'AdminEdit', component: AdminEdit }
 ])
 export class App {
 

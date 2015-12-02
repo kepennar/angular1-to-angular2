@@ -24,11 +24,11 @@ import {Article} from '../../core/article/model/Article';
 export class Home {
   private articles: Article[] = [];
 
-  constructor(private router: Router, private articleStore: ArticlesStore) {
+  constructor(private router: Router, private articlesStore: ArticlesStore) {
   }
 
   onInit() {
-    this.articleStore.query()
+    this.articlesStore.query()
       .subscribe(articles => this.articles = articles);
   }
   goToDetails(article: Article) {

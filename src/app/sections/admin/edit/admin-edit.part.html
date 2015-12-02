@@ -1,24 +1,23 @@
-<div class="container article-edit">
-  <button class="btn btn-primary" ui-sref="home">Go back to the blog</button>
+<div class="container" *ng-if="article">
+  <button class="btn btn-primary" [router-link]="['Home']">Go back to the blog</button>
   <h1>Administration</h1>
   <fieldset>
     <legend>
-      <span ng-hide="admin.editTitle" ng-dblclick="admin.editTitle = true" placeholder="Title">{{admin.article.name}}</span>
-      <form ng-submit="admin.editTitle = false">
-        <input type="text" ng-show="admin.editTitle" ng-model="admin.article.name" ng-blur="admin.editTitle = false" />
+      <span [hidden]="editTitle" (dblclick)="editTitle = true" placeholder="Title">{{article.name}}</span>
+      <form (submit)="editTitle = false" [hidden]="!editTitle">
+        <input type="text" [(ng-model)]="article.name" (blur)="editTitle = false" />
       </form>
     </legend>
-    <p ng-hide="admin.editText" ng-dblclick="admin.editText = true">
-      {{admin.article.text}}
+    <p [hidden]="editText" (dblclick)="editText = true">
+      {{article.text}}
     </p>
-    <form ng-submit="admin.editText = false">
-      <textarea ng-show="admin.editText" ng-model="admin.article.text" ng-blur="admin.editText = false" placeholder="Some text"></textarea>
+    <form (submit)="editText = false">
+      <textarea [hidden]="!editText" [(ng-model)]="article.text" (blur)="editText = false" placeholder="Some text"></textarea>
     </form>
-</div>
-<div class="pull-right">
-  <button class="btn btn-default" ui-sref="admin">Cancel</button>
-  <button class="btn btn-danger" ng-if="admin.article.id" ng-click="admin.delete(admin.article)">Delete</button>
-  <button class="btn btn-success" ng-click="admin.save(admin.article)">save</button>
-
-</div>
+    
+  <div class="pull-right">
+    <button class="btn btn-default" [router-link]=['AdminList'] >Cancel</button>
+    <button class="btn btn-danger" *ng-if="article.id" (click)="delete(article)">Delete</button>
+    <button class="btn btn-success" (click)="save(article)">save</button>
+  </div>
 </div>
