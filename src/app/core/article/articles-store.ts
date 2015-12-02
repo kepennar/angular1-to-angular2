@@ -1,40 +1,44 @@
 
 import {Injectable} from 'angular2/angular2';
-import {Http} from 'angular2/http';
+import {Http, Headers} from 'angular2/http';
 import { Observable } from 'angular2/angular2';
 import {Article} from './model/Article';
-import {Comment} from './model/Comment';
+
 import {Rate} from './model/Rate';
+
+const JSON_HEADERS = new Headers();
+JSON_HEADERS.append('Accept', 'application/json');
+JSON_HEADERS.append('Content-Type', 'application/json');
+
 
 @Injectable()
 export class ArticlesStore {
 
-  constructor(public http: Http) { 
+  constructor(public http: Http) {
   }
 
   query(): Observable<Article[]> {
-    return this.http.get('api/posts/')
-    .map(res => {
-      return res.json().map(this.articleMapper);
-    });
+    return this.http.get('/api/posts/')
+      .map(res => res.json().map(this.articleMapper));
   }
-  
+
+  getById(articleId: string): Observable<Article> {
+    return this.http.get(`/api/posts/${articleId}`)
+      .map(res => this.articleMapper(res.json()));
+  }
+
   update(article: Article) {
-    return this.http.put(`api/posts/${article.id}`, JSON.stringify(article));
+    return this.http.put(`/api/posts/${article.id}`,
+      JSON.stringify(article),
+      { headers: JSON_HEADERS });
   }
-  
-  getComments(article: Article) {
-    return this.http.get(`api/posts/${article.id}/comments`);
-  }
-  
+
   rate(rate: Rate) {
-    return this.http.post(`api/posts/${rate.id}/rate`, JSON.stringify(rate));
+    return this.http.post(`/api/posts/${rate.articleId}/rate`, JSON.stringify(rate),
+      { headers: JSON_HEADERS })
+      .map(res => res.json());
   }
-  
-  comment(comment: Comment) {
-    return this.http.get(`api/posts/${comment.postId}/comments`, comment);
-  }
-  
+
   private articleMapper(article) {
     return {
       id: article.id,

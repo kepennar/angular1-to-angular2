@@ -1,4 +1,4 @@
 export interface Rate {
-	id: number;
+	articleId: string;
 	rate: number;
 }

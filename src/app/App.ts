@@ -4,7 +4,8 @@ import {ZNNavbar} from './components/navbar/navbar';
 import {RouteConfig} from 'angular2/router';
 import { RouterOutlet } from 'angular2/router';
 
-import {Home} from './sections/home';
+import {Home} from './sections/home/home';
+import {ArticleDetails} from './sections/article-details/article-details';
 
 @Component({
   selector: 'app',
@@ -16,7 +17,8 @@ import {Home} from './sections/home';
 		</div>
 	`})
 @RouteConfig([
-  { path: '/', as: 'Home', component: Home }
+  { path: '/', as: 'Home', component: Home },
+  { path: '/article/:articleId', as: 'ArticleDetails', component: ArticleDetails }
 ])
 export class App {
 

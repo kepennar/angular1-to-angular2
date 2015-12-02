@@ -18,4 +18,10 @@ export class ZNComment {
     
   constructor() {
   }
+  
+  comment(newComment) {
+    if (newComment) {
+      this.onSend.next(newComment);
+    }
+  }
 }
