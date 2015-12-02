@@ -1,4 +1,4 @@
-import {ZNRating} from './rating';
+import ZNRating from './rating';
 
 import {adapter} from '../../adapter';
 

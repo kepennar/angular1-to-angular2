@@ -13,7 +13,7 @@ interface Star {
     NgFor, NgIf, NgClass
   ]
 })
-export class ZNRating {
+export default class ZNRating {
   @Input() private currentRate: number;
   @Input() private max: number;
   private stars: Star[];
@@ -23,7 +23,8 @@ export class ZNRating {
   /**
    * Initialize component => Create the right numbers of stars
    */
-  onInit() {
+  ngOnInit() {
+    console.log('init rating', this);
     this.stars = [];
     for (var i = 0; i < this.max; i++) {
       this.stars.push({
@@ -36,7 +37,7 @@ export class ZNRating {
   /**
    * If currentChange input is modified => Update component
    */
-  onChanges(changeRecord) {
+  ngOnChanges(changeRecord) {
     if (changeRecord.hasOwnProperty('currentRate') && this.stars) {
       this.selectRate(changeRecord.currentRate.currentValue);
     }
