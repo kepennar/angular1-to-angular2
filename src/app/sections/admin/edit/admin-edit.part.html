@@ -14,9 +14,9 @@
     <form (submit)="editText = false">
       <textarea [hidden]="!editText" [(ng-model)]="article.text" (blur)="editText = false" placeholder="Some text"></textarea>
     </form>
-    
+  </fieldset>  
   <div class="pull-right">
-    <button class="btn btn-default" [router-link]=['AdminList'] >Cancel</button>
+    <button class="btn btn-default" [router-link]="['AdminList']" >Cancel</button>
     <button class="btn btn-danger" *ng-if="article.id" (click)="delete(article)">Delete</button>
     <button class="btn btn-success" (click)="save(article)">save</button>
   </div>

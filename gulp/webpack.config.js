@@ -33,7 +33,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['angular1', 'angular2'],
+      names: ['angular2'],
       minChunks: Infinity
     }),
     new webpack.optimize.CommonsChunkPlugin({

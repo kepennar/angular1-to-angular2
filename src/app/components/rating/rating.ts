@@ -23,7 +23,7 @@ export class ZNRating {
   /**
    * Initialize component => Create the right numbers of stars
    */
-  onInit() {
+  ngOnInit() {
     this.stars = [];
     for (var i = 0; i < this.max; i++) {
       this.stars.push({
@@ -36,7 +36,7 @@ export class ZNRating {
   /**
    * If currentChange input is modified => Update component
    */
-  onChanges(changeRecord) {
+  ngOnChanges(changeRecord) {
     if (changeRecord.hasOwnProperty('currentRate') && this.stars) {
       this.selectRate(changeRecord.currentRate.currentValue);
     }

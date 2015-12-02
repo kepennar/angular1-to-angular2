@@ -27,7 +27,7 @@ export class AdminEdit {
       
     this.articleId = this.routeParam.get('articleId');
   }
-  onInit() {
+  ngOnInit() {
     if (this.articleId) {
      this.articlesStore.getById(this.articleId)
       .subscribe(article => this.article = article); 

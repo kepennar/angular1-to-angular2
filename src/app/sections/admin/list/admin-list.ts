@@ -18,7 +18,7 @@ export class AdminList {
   
   constructor(private articlesStore: ArticlesStore) {
   }
-  onInit() {
+  ngOnInit() {
     this.articlesStore.query()
       .subscribe(articles => this.articles = articles);
   }

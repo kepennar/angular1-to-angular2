@@ -53,7 +53,7 @@ export class ArticleDetails {
       
     this.articleId = this.routeParam.get('articleId');
   }
-  onInit() {
+  ngOnInit() {
     this.articlesStore.getById(this.articleId)
       .subscribe(article => this.article = article);
   }

@@ -27,7 +27,7 @@ export class Home {
   constructor(private router: Router, private articlesStore: ArticlesStore) {
   }
 
-  onInit() {
+  ngOnInit() {
     this.articlesStore.query()
       .subscribe(articles => this.articles = articles);
   }
