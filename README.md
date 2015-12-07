@@ -1,8 +1,8 @@
 # Matinale NG2
-## Migration d'une application Angular1 vers Angular2
+## Migrate from Angular1 to Angular2
 
 ### Installation
-Le code de l'api se trouve [ici](https://github.com/kepennar/typescript-blog-api)
+Api src: [repo](https://github.com/kepennar/typescript-blog-api)
 
 ```sh
 $ npm install
@@ -13,7 +13,7 @@ $ gulp serve
 
 ### Branches
 
- - **master** : Code initial: AngularJs
- - **preparation** : Préparation du code pour la migration
- - **hybridation** : Migration de composants vers Angular2: Application hybride
- - **migration** : Migration de l'ensemble de l'application
+ - **master** : Initial AngularJs code
+ - **preparation** : Prepare for migration
+ - **hybridation** : Migration of some components to Angular2 using ngUpgrade: Hybrid app
+ - **migration** : Migrate whole app
